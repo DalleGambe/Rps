@@ -12,6 +12,8 @@ namespace Rps.Domain
         public int GamesWon { get; set; } = 0;
         [Required]
         public int GamesPlayed { get; set; } = 0;
+        [Required]
+        public int TotalScore { get; set; } = 0;
         public List<RpsMatch> RpsMatches { get; set; } = new List<RpsMatch>();
     }
 }

@@ -1,9 +1,16 @@
 ﻿using System;
-using System.Windows;
 
 namespace Rps.Client.ViewModels
 {
-    public class MainMenuViewModel : BaseViewModel, IDisposable
+    //What this needs:
+    //String to show for player name
+    //Make a player object
+    //Make a match object
+    //Write it to the database
+    //Calculate score based on time and points
+    //Update the score after a second game
+    //Get RPS FIGHT logic from here https://github.com/DalleGambe/Minigame_App/blob/master/src/services/rpsData.service.ts
+    public class GameViewModel : BaseViewModel, IDisposable
     {
         public override string this[string columnName]
         {
@@ -31,7 +38,6 @@ namespace Rps.Client.ViewModels
         //Shuts down the current application
         private void Shutdown()
         {
-            Application.Current.Shutdown();
         }
     }
 }

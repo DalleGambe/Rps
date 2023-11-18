@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Windows;
 
 namespace Rps.Client.ViewModels
 {
-    public class MainMenuViewModel : BaseViewModel, IDisposable
+    public class HighscoreViewModel : BaseViewModel, IDisposable
     {
         public override string this[string columnName]
         {
@@ -31,7 +30,7 @@ namespace Rps.Client.ViewModels
         //Shuts down the current application
         private void Shutdown()
         {
-            Application.Current.Shutdown();
         }
     }
 }
+

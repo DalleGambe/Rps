@@ -5,10 +5,15 @@
     <TargetFramework>net6.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>programicon.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove="Fonts\Pixeled.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="programicon.ico" />
   </ItemGroup>
 
   <ItemGroup>
@@ -20,6 +25,10 @@
     <Resource Include="Fonts\Pixeled.ttf">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Images\" />
   </ItemGroup>
 
 </Project>
