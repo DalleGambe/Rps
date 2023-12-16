@@ -4,12 +4,23 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
 using System.Windows;
+using Rps.Domain;
+using Rps.BL.UnitOfWork;
+using Rps.DAL;
+using System.Linq;
 
 namespace Rps.Client.ViewModels
 {
     public abstract class BaseViewModel : IDataErrorInfo, INotifyPropertyChanged, ICommand
     {
         #region ICommand
+        private IUnitOfWork _unitOfWork = new UnitOfWork(new RpsDataContext());
+
+        public IUnitOfWork UnitOfWork { get { return _unitOfWork; } }
+
+        public BaseViewModel() {
+            AppSetting = _unitOfWork.SettingRepo.Get(1);
+        }
 
         public event EventHandler CanExecuteChanged
         {
@@ -73,6 +84,12 @@ namespace Rps.Client.ViewModels
             {
                 this.MessageBoxRequest(this, new MvvmMessageBoxEventArgs(resultAction, messageBoxText, caption, button, icon, defaultResult, options));
             }
+        }
+        private Setting _appsetting;
+        public Setting AppSetting
+        {
+            get { return _appsetting; }
+            set { _appsetting = value; NotifyPropertyChanged(); }
         }
     }
 }

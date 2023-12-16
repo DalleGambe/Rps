@@ -1,8 +1,7 @@
 ﻿using AllPhiConsultantRecruiter.DAL.Repositories.Contracts;
 using Rps.Domain;
-using System.Data.Entity;
 using System.Linq.Expressions;
-using System.Data.Entity.Migrations;
+using Microsoft.EntityFrameworkCore;
 
 namespace Rps.DAL.Repositories
 {
@@ -87,7 +86,6 @@ namespace Rps.DAL.Repositories
             return Context.Set<T>().Find(id);
         }
         #endregion
-        //TODO finish the GetById method or delete it.
         #region Write
         #region Create
         /// <summary>
@@ -98,6 +96,16 @@ namespace Rps.DAL.Repositories
         public void AddToDb(T entity)
         {
             Context.Set<T>().Add(entity);
+        }
+
+        /// <summary>
+        /// Adds an entity to a table in the database and return their id.
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
+        public int AddToDbReturnId(T entity)
+        {
+           return Context.Set<T>().Add(entity).Entity.Id; 
         }
 
         /// <summary>

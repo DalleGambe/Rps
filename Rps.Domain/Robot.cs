@@ -2,12 +2,12 @@
 
 namespace Rps.Domain
 {
-    public class Player : BasicEntity
+    public class Robot : BasicEntity
     {
         [Required]
         [MinLength(1)]
         [MaxLength(12)]
-        public string PlayerName { get; set; } = string.Empty;
+        public string RobotName { get; set; } = string.Empty;
         [Required]
         public int GamesWon { get; set; } = 0;
         [Required]

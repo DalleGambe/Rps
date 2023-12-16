@@ -10,7 +10,15 @@ namespace Rps.Client.Views
         public GameView()
         {
             InitializeComponent();
-            //show module that asks for name
+            //show module that asks for name OR use more user controles within this one
+            //one for the name
+            //one for the option
+            //s and the result screen
+            ContentWindow.Content = new PlayerNameInputView(this);
+        }
+        public void GoToTEST()
+        {
+            ContentWindow.Content = new PlayingFieldView();
         }
     }
 }

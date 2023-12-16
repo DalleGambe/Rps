@@ -18,22 +18,22 @@ namespace Rps.Client.Views
         private void StartButton_Click(object sender, RoutedEventArgs e)
         {
             Content = new GameView();
-            var viewModelMainView = new GameViewModel();
-            DataContext = viewModelMainView;
+            var viewModelGameView = new GameViewModel();
+            DataContext = viewModelGameView;
         }
         //Shows the player the option menu
         private void OptionButton_Click(object sender, RoutedEventArgs e)
         {
             Content = new OptionView();
-            var viewModelMainView = new OptionViewModel();
-            DataContext = viewModelMainView;
+            var viewModelOptionView = new OptionViewModel();
+            DataContext = viewModelOptionView;
         }
         //Shows the player the highscore screen
         private void HighScoreButton_Click(object sender, RoutedEventArgs e)
         {
             Content = new HighscoreView();
-            var viewModelMainView = new HighscoreViewModel();
-            DataContext = viewModelMainView;
+            var viewModelHighscoreView = new HighscoreViewModel();
+            DataContext = viewModelHighscoreView;
         }
         //Shuts down the application
         private void QuitButton_Click(object sender, RoutedEventArgs e)

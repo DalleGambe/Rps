@@ -1,8 +1,9 @@
 ﻿using AllPhiConsultantRecruiter.DAL.Repositories.Contracts;
+using Rps.DAL;
 using Rps.DAL.Repositories;
 using Rps.Domain;
 
-namespace Rps.DAL.UnitOfWork
+namespace Rps.BL.UnitOfWork
 {
     public class UnitOfWork : IUnitOfWork
     {
@@ -14,6 +15,7 @@ namespace Rps.DAL.UnitOfWork
         public IGenericRepository<RpsMatch>? _rpsMatchRepo;
 
         public IGenericRepository<Setting>? _settingRepo;
+        public IGenericRepository<Robot>? _robotRepo;
         #endregion
 
         public UnitOfWork(RpsDataContext ctx)
@@ -54,6 +56,18 @@ namespace Rps.DAL.UnitOfWork
                     _settingRepo = new GenericRepository<Setting>(Context);
                 }
                 return _settingRepo;
+            }
+        }
+
+        public IGenericRepository<Robot> RobotRepo
+        {
+            get
+            {
+                if (_robotRepo == null)
+                {
+                    _robotRepo = new GenericRepository<Robot>(Context);
+                }
+                return _robotRepo;
             }
         }
 

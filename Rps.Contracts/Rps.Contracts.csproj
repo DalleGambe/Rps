@@ -6,12 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="BusinessModels\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Rps.DAL\Rps.DAL.csproj" />
-  </ItemGroup>
-
 </Project>

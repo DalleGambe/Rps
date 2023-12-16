@@ -20,10 +20,10 @@
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Vertical">
             <Label Content="Audio" FontSize="25" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="5" Grid.Row="0"></Label>
-            <Label Content="Audio" FontSize="18" Foreground="White" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Margin="5" Grid.Row="0"></Label>
+            <Label Content="Master volume" FontSize="18" Foreground="White" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Margin="5" Grid.Row="0"></Label>
             <DockPanel Grid.Row="1" Grid.Column="1" Margin="5">
                 <materialDesign:PackIcon Width="20" Height="20" Foreground="White" Kind="VolumeHigh" Margin="5"/>
-                <Slider Maximum="100" TickPlacement="BottomRight" TickFrequency="10" IsSnapToTickEnabled="True" 
+                <Slider Maximum="100" TickPlacement="BottomRight" TickFrequency="5"  IsSnapToTickEnabled="True" 
             Margin="5" DockPanel.Dock="Right"/>
             </DockPanel>
         </StackPanel>

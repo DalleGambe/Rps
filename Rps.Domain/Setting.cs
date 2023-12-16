@@ -1,10 +1,10 @@
-﻿namespace Rps.Domain
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Rps.Domain
 {
     public class Setting : BasicEntity
     {
-        //audio volume
-        //code
-        //Screen preferenace possibly
-        //code
+        [Required]
+        public int MasterVolume { get; set; } = 60;
     }
 }

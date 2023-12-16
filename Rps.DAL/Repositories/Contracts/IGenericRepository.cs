@@ -56,11 +56,17 @@ namespace AllPhiConsultantRecruiter.DAL.Repositories.Contracts
         /// <returns></returns>
         void AddToDb(T entity);
         /// <summary>
-        /// Adds an entity hronously to a table in the database if it doesn't already exist.
+        /// Adds an entity to a table in the database if it doesn't already exist.
         /// </summary>
         /// <param name="entity"></param>
         /// <returns></returns>
-        //void AddToDbIfNotExist(T entity);
+
+        /// <summary>
+        /// Adds an entity to a table in the database if it doesn't already exist and returns it'd id.
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
+        int AddToDbReturnId(T entity);
 
         /// <summary>
         /// Adds or changes the data of the entity that was provided in the database.

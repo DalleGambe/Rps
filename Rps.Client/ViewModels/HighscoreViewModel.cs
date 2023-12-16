@@ -8,6 +8,7 @@ namespace Rps.Client.ViewModels
         {
             get { return ""; }
         }
+
         public override bool CanExecute(object parameter)
         {
             return true;
@@ -15,21 +16,21 @@ namespace Rps.Client.ViewModels
 
         public void Dispose()
         {
-            ////Remove unitofwork if no longer needed
-            //throw new NotImplementedException();
+            UnitOfWork.Dispose();
         }
 
         public override void Execute(object parameter)
         {
             switch (parameter)
             {
-                case "Shutdown": Shutdown(); break;
+                case "Shutdown": Test(); break;
             }
         }
 
         //Shuts down the current application
-        private void Shutdown()
+        private void Test()
         {
+            
         }
     }
 }

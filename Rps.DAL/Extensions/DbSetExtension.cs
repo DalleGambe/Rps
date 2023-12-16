@@ -1,10 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore.ChangeTracking;
-using Rps.Domain;
-using System.Data.Entity;
-using System.Data.Entity.Infrastructure;
-using System.Linq.Expressions;
-
-namespace Rps.DAL.Extensions
+﻿namespace Rps.DAL.Extensions
 {
     public static class DbSetExtensions
     {
