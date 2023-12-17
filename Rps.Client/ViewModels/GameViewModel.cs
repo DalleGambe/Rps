@@ -36,13 +36,16 @@ namespace Rps.Client.ViewModels
             CurrentContentGameView = new PlayerNameInputView();
         }
 
+        Random random = new Random();
+
         private void InitializeObjects()
         {
             //Check if player with name exists if it does return their values instead otherwise create a new player in the database
             Player = new Player();
             IsPistolNotShown = _rpsGameLogicCalculator.DoesPistolNotAppearThisRound();
             RpsMatch = new RpsMatch();
-            RobotChosen = _unitOfWork.RobotRepo.Get(3);
+            //Normally I would get the length OR write a seperate repo to get a random robot. Since I'm running low on time, this is hard coded and will be changed in the future after the deadline.
+            RobotChosen = _unitOfWork.RobotRepo.Get(random.Next(1, 37));
             RpsMatch.RobotInMatch = RobotChosen;
         }
 

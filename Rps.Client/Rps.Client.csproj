@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <None Remove="Fonts\Pixeled.ttf" />
+    <None Remove="Media\Images\RpsSpaceGameLogo.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -30,10 +31,10 @@
     <Resource Include="Fonts\Pixeled.ttf">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Media\Images\RpsSpaceGameLogo.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Media\Images\" />
     <Folder Include="Media\Music\" />
     <Folder Include="Media\SFX\" />
   </ItemGroup>
