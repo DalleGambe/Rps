@@ -9,6 +9,6 @@ namespace Rps.Contracts.Enumerations
         [Display(Name = "Tie")]
         Tie,
         [Display(Name = "Loss")]
-        Lose,
+        Loss,
     }
 }

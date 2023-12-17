@@ -1,9 +1,10 @@
 ﻿using AllPhiConsultantRecruiter.DAL.Repositories.Contracts;
+using Rps.BL.Contracts;
 using Rps.DAL;
 using Rps.DAL.Repositories;
 using Rps.Domain;
 
-namespace Rps.BL.UnitOfWork
+namespace Rps.BL
 {
     public class UnitOfWork : IUnitOfWork
     {

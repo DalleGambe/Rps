@@ -18,8 +18,12 @@
             <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
+        <Button x:Name="btnGoToMainMenu" Command="{Binding}" CommandParameter="GoToMainMenu">
+            <materialDesign:PackIcon Width="20" Height="20" Foreground="white" Kind="ArrowBack" />
+        </Button>
         <Label Content="Highscores" FontSize="25" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="5" Grid.Row="0" Grid.Column="1"></Label>
         <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Vertical">
+            <ListView x:Name="lvwHighscores" ItemsSource="{Binding HighScores}" Foreground="#DDFFFFFF" HorizontalAlignment="Center" HorizontalContentAlignment="Center" />
         </StackPanel>
     </Grid>
 </UserControl>

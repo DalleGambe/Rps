@@ -24,8 +24,8 @@
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
             <StackPanel Margin="20 10 0 0"  Grid.Row="0" Grid.Column="0" Orientation="Vertical">
-                <TextBlock Text="Spaceblaster" FontSize="15" Foreground="White"/>
-                <TextBlock Text="Version 1.0" HorizontalAlignment="Center" FontSize="15" Foreground="White" Width="72"/>
+                <TextBlock Text="Cosmic Showdown" FontSize="14" Foreground="White" HorizontalAlignment="Left"/>
+                <TextBlock Text="Version 1.0" FontSize="12" Foreground="White" Width="72" HorizontalAlignment="Left" VerticalAlignment="Center"/>
             </StackPanel>
 
             <Button Grid.Column="4"  Width="50" Height="50" Margin="0"  BorderBrush="Transparent"  BorderThickness="100" Command="{Binding}" CommandParameter="Minimize" >
@@ -40,6 +40,6 @@
                 <materialDesign:PackIcon Width="20" Height="20" Foreground="white" Kind="Shutdown" />
             </Button>
         </Grid>
-        <ContentControl x:Name="ContentWindow" Grid.Row="1" Grid.Column="1" Margin="10,81,7,10" Grid.ColumnSpan="2"/>
+        <ContentControl x:Name="ContentWindow" Grid.Row="1" Grid.Column="1" Margin="10,81,7,10" Grid.ColumnSpan="2" Content="{Binding CurrentMainWindowContent}"/>
     </Grid>
 </Window>

@@ -3,11 +3,11 @@
 namespace Rps.Client.Views
 {
     /// <summary>
-    /// Interaction logic for GameView.xaml
+    /// Interaction logic for ChooseWeaponView.xaml
     /// </summary>
-    public partial class GameView : UserControl
+    public partial class ChooseWeaponView : UserControl
     {
-        public GameView()
+        public ChooseWeaponView()
         {
             InitializeComponent();
         }

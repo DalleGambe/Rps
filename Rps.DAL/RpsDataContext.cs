@@ -6,7 +6,7 @@ namespace Rps.DAL
 {
     public class RpsDataContext : DbContext
     {
-        //Foreach table one DbSet
+        //Foreach table one DbSet so that they are created in the database
         public DbSet<Player> Players { get; set; }
         public DbSet<Robot> Robots { get; set; }
         public DbSet<RpsMatch> RpsMatchesPlayed { get; set; }

@@ -17,18 +17,16 @@
             <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
-        <Button Width="100" Height="50" Margin="0"  Grid.Row="0" Grid.Column="1" BorderBrush="Transparent"  BorderThickness="100">
-            Logo
-        </Button>
+        <Image Source="/Media/Images/RpsSpaceGameLogo.png" Grid.Column="1" />
         <StackPanel Margin="20 10 0 0" Grid.Row="1" Grid.Column="1" Orientation="Vertical">
-            <Button x:Name="StartButton" Width="125" Height="50" Margin="0" BorderBrush="Transparent" FontFamily="./"  BorderThickness="100" Click="StartButton_Click">
+            <Button x:Name="StartButton" Width="125" Height="50" Margin="0" BorderBrush="Transparent" BorderThickness="100" Click="StartButton_Click">
                 Start Game
-            </Button>
-            <Button x:Name="OptionButton" Width="125" Height="50" Margin="0"  BorderBrush="Transparent"  BorderThickness="100" Click="OptionButton_Click">
-                Options
             </Button>
             <Button x:Name="HighScoreButton" Width="125" Height="50" Margin="0"  BorderBrush="Transparent"  BorderThickness="100" Click="HighScoreButton_Click">
                 Highscores
+            </Button>
+            <Button x:Name="OptionButton" Width="125" Height="50" Margin="0"  BorderBrush="Transparent"  BorderThickness="100" Click="OptionButton_Click">
+                Options
             </Button>
             <Button x:Name="QuitButton" Width="125" Height="50" Margin="0"  BorderBrush="Transparent"  BorderThickness="100" Click="QuitButton_Click">
                 Quit

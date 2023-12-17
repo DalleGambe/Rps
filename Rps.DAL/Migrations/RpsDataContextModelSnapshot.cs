@@ -39,7 +39,7 @@ namespace Rps.DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Players");
+                    b.ToTable("Players", (string)null);
                 });
 
             modelBuilder.Entity("Rps.Domain.Robot", b =>
@@ -64,7 +64,7 @@ namespace Rps.DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Robots");
+                    b.ToTable("Robots", (string)null);
                 });
 
             modelBuilder.Entity("Rps.Domain.RpsMatch", b =>
@@ -100,7 +100,7 @@ namespace Rps.DAL.Migrations
 
                     b.HasIndex("RobotInMatchId");
 
-                    b.ToTable("RpsMatchesPlayed");
+                    b.ToTable("RpsMatchesPlayed", (string)null);
                 });
 
             modelBuilder.Entity("Rps.Domain.Setting", b =>
@@ -117,7 +117,7 @@ namespace Rps.DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("AppSettings");
+                    b.ToTable("AppSettings", (string)null);
                 });
 
             modelBuilder.Entity("Rps.Domain.RpsMatch", b =>

@@ -1,10 +1,14 @@
-﻿using System;
-using System.Windows;
+﻿using System.Windows;
 
 namespace Rps.Client.ViewModels
 {
-    public class MainMenuViewModel : BaseViewModel, IDisposable
+    public class MainMenuViewModel : BaseViewModel
     {
+        public MainMenuViewModel()
+        {
+            
+        }
+
         public override string this[string columnName]
         {
             get { return ""; }
@@ -12,12 +16,6 @@ namespace Rps.Client.ViewModels
         public override bool CanExecute(object parameter)
         {
             return true;
-        }
-
-        public void Dispose()
-        {
-            ////Remove unitofwork if no longer needed
-            //throw new NotImplementedException();
         }
 
         public override void Execute(object parameter)

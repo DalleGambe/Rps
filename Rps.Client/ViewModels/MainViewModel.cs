@@ -10,7 +10,6 @@ namespace Rps.Client.ViewModels
         }
         public override bool CanExecute(object parameter)
         {
-            //throw new System.NotImplementedException();
             return true;
         }
 
@@ -23,10 +22,45 @@ namespace Rps.Client.ViewModels
                 case "Minimize": Minimize(); break;
             }
         }
+        public MainViewModel()
+        {
+            CurrentMainWindowContent = new MainMenuViewModel();
+            //ActiveViewModel = new MainMenuViewModel();
+        }
+
+        #region ContentWindow
+        //Content for the MainWindow
+        private object _currentMainWindowContent;
+
+        public object CurrentMainWindowContent
+        {
+            get => _currentMainWindowContent;
+            set
+            {
+                _currentMainWindowContent = value;
+                NotifyPropertyChanged(nameof(CurrentMainWindowContent));
+            }
+        }
+
+        ////Active ViewModel
+        //private BaseViewModel _activeViewModel;
+
+        //public object ActiveViewModel
+        //{
+        //    get => _activeViewModel;
+        //    set
+        //    {
+        //        _activeViewModel = value;
+        //        NotifyPropertyChanged(nameof(ActiveViewModel));
+        //    }
+        //}
+        #endregion
+
         #region Taskbar
 
         //Current window status
         private WindowState _curWindowState;
+
         public WindowState CurWindowState
         {
             get

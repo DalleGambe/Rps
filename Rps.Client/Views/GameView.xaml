@@ -15,7 +15,7 @@
             <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
-        <Label Content="Game" FontSize="25" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Row="0" Grid.Column="1"></Label>
-        <ContentControl x:Name="ContentWindow" Margin="5" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3"></ContentControl>
+        <Label Content="Showdown" FontSize="25" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Row="0" Grid.Column="1"></Label>
+        <ContentControl x:Name="ContentWindow" Margin="5" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Content="{Binding CurrentContentGameView}"></ContentControl>
     </Grid>
 </UserControl>

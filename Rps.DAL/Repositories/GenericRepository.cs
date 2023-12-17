@@ -105,18 +105,12 @@ namespace Rps.DAL.Repositories
         /// <returns></returns>
         public int AddToDbReturnId(T entity)
         {
-           return Context.Set<T>().Add(entity).Entity.Id; 
-        }
+            var addedEntity = Context.Set<T>().Add(entity);
+            Context.SaveChanges(); // Save changes to the database to ensure the ID is generated.
 
-        /// <summary>
-        /// Adds an entity to a table in the database if it doesn't already exist.
-        /// </summary>
-        /// <param name="entity"></param>
-        /// <returns></returns>
-        //public void AddToDbIfNotExist(T entity)
-        //{
-        //    Context.Set<T>().AddIfNotExists(entity);
-        //}
+            // If T has an 'Id' property, assuming it's an int type.
+            return (int)addedEntity.Property("Id").CurrentValue;
+        }
 
         /// <summary>
         /// Adds or changes the data of the entity that was provided in the database.
@@ -126,8 +120,7 @@ namespace Rps.DAL.Repositories
         /// <returns></returns>
         public void AddToDbOrChange(T entity)
         {
-           Context.Set<T>().AddAsync(entity);
-            Context.SaveChanges();
+            Context.Set<T>().Update(entity);
         }
 
         /// <summary>
@@ -148,8 +141,7 @@ namespace Rps.DAL.Repositories
         /// <returns></returns>
         public void Change(T entity)
         {
-           Context.Entry(entity).State = (Microsoft.EntityFrameworkCore.EntityState)EntityState.Modified;
-           Context.SaveChanges();
+            Context.Entry<T>(entity).State = EntityState.Modified;
         }
         #endregion
         #endregion

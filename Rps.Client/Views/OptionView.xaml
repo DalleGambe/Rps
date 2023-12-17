@@ -23,9 +23,12 @@
             <Label Content="Master volume" FontSize="18" Foreground="White" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Margin="5" Grid.Row="0"></Label>
             <DockPanel Grid.Row="1" Grid.Column="1" Margin="5">
                 <materialDesign:PackIcon Width="20" Height="20" Foreground="White" Kind="VolumeHigh" Margin="5"/>
-                <Slider Maximum="100" TickPlacement="BottomRight" TickFrequency="5"  IsSnapToTickEnabled="True" 
+                <Slider Maximum="100" TickPlacement="BottomRight" TickFrequency="5"  IsSnapToTickEnabled="True" Value="{Binding MasterVolume.MasterVolume,  Mode=TwoWay}"
             Margin="5" DockPanel.Dock="Right"/>
             </DockPanel>
+            <Button x:Name="btnGoToMainMenu" Command="{Binding}" CommandParameter="SaveSettings" Margin="20" Background="#FF6E7135" BorderBrush="#FF5B5D36">
+                Save Changes
+            </Button>
         </StackPanel>
     </Grid>
 </UserControl>

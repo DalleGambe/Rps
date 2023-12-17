@@ -1,24 +1,28 @@
-﻿using Rps.Client.Extra;
+﻿using Rps.BL;
+using Rps.BL.Contracts;
+using Rps.Client.Extra;
+using Rps.DAL;
+using Rps.Domain;
 using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Windows.Input;
 using System.Windows;
-using Rps.Domain;
-using Rps.BL.UnitOfWork;
-using Rps.DAL;
-using System.Linq;
+using System.Windows.Input;
 
 namespace Rps.Client.ViewModels
 {
     public abstract class BaseViewModel : IDataErrorInfo, INotifyPropertyChanged, ICommand
     {
         #region ICommand
-        private IUnitOfWork _unitOfWork = new UnitOfWork(new RpsDataContext());
+        protected IUnitOfWork _unitOfWork;
 
-        public IUnitOfWork UnitOfWork { get { return _unitOfWork; } }
+        public BaseViewModel()
+        {
+            //AppSetting = _unitOfWork.SettingRepo.Get(1);
+        }
 
-        public BaseViewModel() {
+        public BaseViewModel(IUnitOfWork unitOfWork) {
+            _unitOfWork = unitOfWork;
             AppSetting = _unitOfWork.SettingRepo.Get(1);
         }
 
@@ -85,6 +89,7 @@ namespace Rps.Client.ViewModels
                 this.MessageBoxRequest(this, new MvvmMessageBoxEventArgs(resultAction, messageBoxText, caption, button, icon, defaultResult, options));
             }
         }
+
         private Setting _appsetting;
         public Setting AppSetting
         {

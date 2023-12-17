@@ -23,6 +23,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="PropertyChanged.Fody" Version="4.1.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -32,7 +33,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Images\" />
+    <Folder Include="Media\Images\" />
+    <Folder Include="Media\Music\" />
+    <Folder Include="Media\SFX\" />
   </ItemGroup>
 
   <ItemGroup>

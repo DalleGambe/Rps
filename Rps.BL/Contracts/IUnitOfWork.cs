@@ -1,7 +1,7 @@
 ﻿using AllPhiConsultantRecruiter.DAL.Repositories.Contracts;
 using Rps.Domain;
 
-namespace Rps.BL.UnitOfWork
+namespace Rps.BL.Contracts
 {
     public interface IUnitOfWork : IDisposable
     {

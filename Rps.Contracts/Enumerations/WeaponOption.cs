@@ -4,6 +4,8 @@ namespace Rps.Contracts.Enumerations
 {
     public enum WeaponOption
     {
+        [Display(Name = "None")]
+        None,
         [Display(Name = "Pistol")]
         Pistol,
         [Display(Name = "Scissors")]

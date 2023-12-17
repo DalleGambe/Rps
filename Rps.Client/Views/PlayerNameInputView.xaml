@@ -24,11 +24,11 @@
             <DockPanel Grid.Row="1" Grid.Column="1" Margin="5" HorizontalAlignment="Center">
                 <materialDesign:PackIcon Width="20" Height="20" Foreground="White" Kind="RocketLaunch" FlowDirection="RightToLeft" Margin="5"/>
                 <TextBox x:Name="txtPlayerName" materialDesign:HintAssist.Hint="Pumpkin Pie" 
-                         Text="{Binding Player.PlayerName}"
-                         Foreground="White" VerticalAlignment="Center" Margin="5" TextWrapping="Wrap" MinWidth="200"></TextBox>
+                         Text="{Binding Player.PlayerName}" materialDesign:TextFieldAssist.CharacterCounterVisibility="Collapsed"
+                         Foreground="White" VerticalAlignment="Center" Margin="5" TextWrapping="Wrap" MinWidth="200" MaxLength="12"></TextBox>
                 <materialDesign:PackIcon Width="20" Height="20" Foreground="White" Kind="RocketLaunch" Margin="5"/>
             </DockPanel>
         </StackPanel>
-        <Button x:Name="btnPickPlayerName" Content="That's my name, chief!" Margin="5" Grid.Row="1" Grid.Column="1" Click="btnPickPlayerName_Click"></Button>
+        <Button x:Name="btnPickPlayerName" Content="That's my name, chief!" Margin="5" Grid.Row="1" Grid.Column="1" Command="{Binding}" CommandParameter="PlayGame"></Button>
     </Grid>
 </UserControl>

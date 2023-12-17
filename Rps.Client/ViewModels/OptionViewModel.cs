@@ -1,9 +1,15 @@
-﻿using System;
+﻿using Rps.BL.Contracts;
+using Rps.Domain;
+using System;
+using System.Linq;
 
 namespace Rps.Client.ViewModels
 {
-    public class OptionViewModel : BaseViewModel, IDisposable
+    public class OptionViewModel : BaseViewModel
     {
+        public OptionViewModel(IUnitOfWork unitOfWork) : base(unitOfWork) {
+            MasterVolume = _unitOfWork.SettingRepo.GetAll().FirstOrDefault();
+        }
         public override string this[string columnName]
         {
             get { return ""; }
@@ -12,24 +18,34 @@ namespace Rps.Client.ViewModels
         {
             return true;
         }
-
-        public void Dispose()
-        {
-            ////Remove unitofwork if no longer needed
-            //throw new NotImplementedException();
-        }
-
         public override void Execute(object parameter)
         {
             switch (parameter)
             {
-                case "Shutdown": Shutdown(); break;
+                case "SaveSettings": SaveSettings(); break;
             }
         }
 
-        //Shuts down the current application
-        private void Shutdown()
+        //ContentWindow for the MainView from The Game
+        private Setting _masterVolume;
+
+        public Setting MasterVolume
         {
+            get => _masterVolume;
+            set
+            {
+                if (_masterVolume != value)
+                {
+                    _masterVolume = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
+
+        private void SaveSettings()
+        {
+            _unitOfWork.SettingRepo.Change(MasterVolume);
+            _unitOfWork.Save();
         }
     }
 }

@@ -7,17 +7,9 @@ namespace Rps.Client.Views
     /// </summary>
     public partial class PlayerNameInputView : UserControl
     {
-        GameView gameView;
-
-        public PlayerNameInputView(GameView view)
+        public PlayerNameInputView()
         {
             InitializeComponent();
-            gameView = view;
-        }
-
-        private void btnPickPlayerName_Click(object sender, System.Windows.RoutedEventArgs e)
-        {
-            gameView.GoToTEST();
         }
     }
 }

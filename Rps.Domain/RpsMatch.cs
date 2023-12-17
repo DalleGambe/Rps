@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Rps.Contracts.Enumerations;
+using System.ComponentModel.DataAnnotations;
 
 namespace Rps.Domain
 {

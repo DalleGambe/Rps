@@ -27,6 +27,6 @@
         <Label Name="lblBotName" Content="{Binding RobotStat}" FontSize="25" Grid.Column="2" Grid.Row="0" 
                Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
                ></Label>
-        <ContentControl x:Name="ContentWindow"  Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="3"></ContentControl>
+        <ContentControl x:Name="ContentWindow"  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="3" Content="{Binding CurrentContentPlayingField}"></ContentControl>
     </Grid>
 </UserControl>

@@ -76,9 +76,9 @@ namespace AllPhiConsultantRecruiter.DAL.Repositories.Contracts
         /// <returns></returns>
         void AddToDbOrChange(T entity);
         /// <summary>
-        /// Adds a range of entities to the database.
+        /// Adds or changes the data of the entity that was provided in the database based on the value of the primary key. It will return the id afterwards.
         /// </summary>
-        /// <param name="entities"></param>
+        /// <param name="entity"></param>
         /// <returns></returns>
         void AddRange(IEnumerable<T> entities);
         #endregion
